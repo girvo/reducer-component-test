@@ -1,0 +1,30 @@
+{
+  "name": "reducer-component-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "flow-bin": "^0.69.0",
+    "http-server": "^0.11.1",
+    "rollup": "^0.57.1",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-flow": "^1.1.1",
+    "rollup-plugin-jsx": "^1.0.3",
+    "rollup-plugin-node-globals": "^1.2.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "standard": "^11.0.1",
+    "standard-flow": "^1.0.0"
+  },
+  "dependencies": {
+    "react": "16.3",
+    "react-dom": "16.3",
+    "react-stateful-component": "^1.0.0-0"
+  },
+  "scripts": {
+    "start": "http-server -c-1 ./public",
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "check": "flow check && standard-flow"
+  }
+}

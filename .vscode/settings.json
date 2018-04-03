@@ -1,0 +1,51 @@
+{
+  // Disabling JS and TS
+  "javascript.validate.enable": false,
+  "javascript.format.enable": false,
+  "javascript.nameSuggestions": false,
+  "javascript.referencesCodeLens.enabled": false,
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "typescript.validate.enable": false,
+  "typescript.format.enable": false,
+  "typescript.implementationsCodeLens.enabled": false,
+  "typescript.referencesCodeLens.enabled": false,
+  "typescript.useCodeSnippetsOnMethodSuggest": false,
+
+  // Standard & ESLint
+  "standard.enable": true,
+  "standard.options": {
+    "parser": "babel-eslint",
+    "extends": ["standard", "standard-flow"]
+  },
+  "eslint.enable": false,
+
+  // Flow
+  "flow.enabled": true,
+  "flow.stopFlowOnExit": true,
+  "flow.showStatus": true,
+  "flow.useNPMPackagedFlow": true,
+  "flow.runOnEdit": true,
+  "flow.pathToFlow": "flow",
+
+  // Handle snippets...
+  "editor.snippetSuggestions": "none",
+  "editor.suggestSelection": "recentlyUsedByPrefix",
+
+  // Disable various things
+  // "files.exclude": {
+  //   "**/.git": true,
+  //   "**/.svn": true,
+  //   "**/.hg": true,
+  //   "**/CVS": true,
+  //   "**/.DS_Store": true,
+  //   "**/node_modules": true,
+  //   "**/node_modules/flow-static-land/**": false,
+  //   // Probably want to toggle these
+  //   "**/ios": false,
+  //   "**/android": false,
+  //   ".buckconfig": true,
+  //   ".eslint*": true,
+  //   ".git*": true,
+  //   ".watchmanconfig": true
+  // }
+}
