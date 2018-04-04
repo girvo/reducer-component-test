@@ -2,20 +2,18 @@
 import React from 'react'
 import createStatefulComponent, { update } from 'react-stateful-component'
 
-type ExtractReturn = <T>(() => T) => T;
+type Actions =
+  | { type: 'ADD', amount: number }
+  | { type: 'SUBTRACT' }
 
 const add = (amount: number) => ({
   type: 'ADD',
   amount: amount
-});
+})
 
 const subtract = () => ({
   type: 'SUBTRACT'
-});
-
-type Actions =
-  | $Call<ExtractReturn, typeof add>
-  | $Call<ExtractReturn, typeof subtract>
+})
 
 const Counter = createStatefulComponent(() => ({
   initialState: () => ({
@@ -27,7 +25,7 @@ const Counter = createStatefulComponent(() => ({
 
     switch (action.type) {
       case 'ADD':
-        return update.state({ counter: counter + 1 })
+        return update.state({ counter: counter + action.amount })
       case 'SUBTRACT':
         return update.state({ counter: counter - 1 })
       default:
@@ -38,9 +36,9 @@ const Counter = createStatefulComponent(() => ({
 
   render: ({ state, reduce }) => (
     <div>
-      <button key='test' onClick={() => reduce(actionCreators.add())}>+</button>
+      <button key='test' onClick={() => reduce(add(1))}>+</button>
       <span key='test2'>{state.counter}</span>
-      <button key='test3' onClick={() => reduce(actionCreators.subtract())}>-</button>
+      <button key='test3' onClick={() => reduce(subtract())}>-</button>
     </div>
   )
 }))
